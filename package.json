@@ -1,0 +1,21 @@
+{
+  "name": "VITASIM Studio",
+  "version": "1.0.0",
+  "description": "A life and evolution simulator tool",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "https://github.com/FrancisStudios/RR_DOS",
+  "keywords": [
+    "simulation",
+    "evolution",
+    "ai",
+    "life"
+  ],
+  "author": "Francis Stuidos",
+  "license": "",
+  "devDependencies": {
+    "electron": "^5.0.0"
+  }
+}
