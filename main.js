@@ -1,10 +1,10 @@
-const {app, BrowserWindow} = require('electron');
+const { app, BrowserWindow } = require('electron');
 const { App } = require('./config/config.json');
 
-let mainWindow;
+let splashScreenWindow;
 
-function createWindow () {
-  mainWindow = new BrowserWindow({
+function createSplashWindow() {
+  splashScreenWindow = new BrowserWindow({
     width: 600,
     height: 400,
     webPreferences: {
@@ -13,16 +13,17 @@ function createWindow () {
     frame: false
   })
 
-  mainWindow.loadFile('index.html');
+  splashScreenWindow.loadFile('index.html');
 
-  if ( !App.window.menu ) mainWindow.setMenu(null);
-  if ( App.developer.activated ) mainWindow.webContents.openDevTools();
+  if (!App.window.menu) splashScreenWindow.setMenu(null);
+  if (App.developer.activated) splashScreenWindow.webContents.openDevTools();
 
-  mainWindow.on('closed', function () {
-    mainWindow = null
+  splashScreenWindow.on('closed', function () {
+    createGUIWindow();
+    splashScreenWindow = null
   })
 }
 
-app.on('ready', createWindow)
+app.on('ready', createSplashWindow)
 app.on('window-all-closed', function () { if (process.platform !== 'darwin') app.quit() });
-app.on('activate', function () { if (mainWindow === null) createWindow() });
+app.on('activate', function () { if (splashScreenWindow === null) createWindow() });
