@@ -8,7 +8,18 @@
 
 const summonAboutWindow = require('./interfaces/about');
 
-$(document).ready(()=>{
+$(document).ready(() => {
     /* MENU TRIGGERS */
-    $('#about_menu_trigger').on('click', ()=>{ summonAboutWindow(); })
+    $('#about_menu_trigger').on('click', () => {
+        summonAboutWindow();
+        clearMessageWindowFromWorkbench();
+    });
 });
+
+/* MESSAGE WINDOW CLOSE HANDLER */
+const clearMessageWindowFromWorkbench = () => {
+    $('#close-window-action').on('click', () => {
+        console.log('click')
+        document.getElementById('workbenchArea').innerHTML = "";
+    });
+}

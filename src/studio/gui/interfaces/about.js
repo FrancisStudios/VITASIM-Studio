@@ -5,9 +5,10 @@
 */
 
 const { summonNewMessageWindow } = require('../window.module');
+const { about } = require('../../data/content.json');
 
 const summonAboutWindow = () => {
-    const _messageWindowContent = summonNewMessageWindow('about...', 'About VITASIM Studio', 'VITASIM Studio is the best life simulator studios out there.');
+    const _messageWindowContent = summonNewMessageWindow(about.title, about.message);
     document.getElementById('workbenchArea').innerHTML = _messageWindowContent;
 }
 
