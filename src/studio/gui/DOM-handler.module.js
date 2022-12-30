@@ -7,12 +7,14 @@
 */
 
 const summonAboutWindow = require('./interfaces/about');
+const moveWindowComponent = require('./dragger.module');
 
 $(document).ready(() => {
     /* MENU TRIGGERS */
     $('#about_menu_trigger').on('click', () => {
         summonAboutWindow();
         clearMessageWindowFromWorkbench();
+        dispatchMoveHandlerToMessageWindow();
     });
 });
 
@@ -22,4 +24,9 @@ const clearMessageWindowFromWorkbench = () => {
         console.log('click')
         document.getElementById('workbenchArea').innerHTML = "";
     });
+}
+
+/* MESSAGE WINDOW MOVE HANDLER DISPATCH */
+const dispatchMoveHandlerToMessageWindow = () => {
+    moveWindowComponent(document.getElementById('messageWindow'));
 }

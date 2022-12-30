@@ -10,8 +10,8 @@ const getWorkspaceCenter = () => { return ({width: window.innerWidth / 2, height
 
 const summonNewMessageWindow = (title, message) => {
     return (`
-        <div class="card bg-secondary border-info mb-3 text-light" style="max-width: 25rem; left: ${getWorkspaceCenter().width-200}px; top: ${getWorkspaceCenter().height-120}px;">
-        <div class="card-header"><button type="button" class="btn btn-info btn-sm" id="close-window-action">close</button></div>
+        <div class="card bg-secondary border-info mb-3 text-light" id="messageWindow" style="max-width: 25rem; left: ${getWorkspaceCenter().width-200}px; top: ${getWorkspaceCenter().height-120}px;">
+        <div class="card-header" id="messageWindowHeader"><button type="button" class="btn btn-info btn-sm" id="close-window-action">close</button></div>
         <div class="card-body">
           <h5 class="card-title">${title}</h5>
           <p class="card-text">${message}</p>
