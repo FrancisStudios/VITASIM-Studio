@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, nativeTheme } = require('electron');
 const { App } = require('./config/config.json');
 const path = require('path');
 
@@ -39,6 +39,7 @@ const createGUIWindow = () => {
     if (App.developer.activated) studioGUIWindow.webContents.openDevTools();
 
     studioGUIWindow.loadFile('main.html');
+    nativeTheme.themeSource = 'dark';
 }
 
 app.whenReady().then(() => {

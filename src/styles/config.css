@@ -30,4 +30,29 @@ html body {
     left: 0px;
     padding: 10px;
     z-index: 999;
+    display: flex;
+}
+
+#menu .dropdown {
+    padding: 4px;
+}
+
+#timeRegulator {
+    position: absolute;
+    margin: 5px;
+    right: 0px;
+    bottom: 0px;
+}
+
+#timeRegulator > .card {
+    width: 14rem;
+}
+
+.timedisplay{
+    margin: 5px;
+}
+
+#timeRegulator .btn-group {
+    display: flex;
+    justify-content: space-around;
 }

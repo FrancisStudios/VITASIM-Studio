@@ -12,16 +12,73 @@
   <body>
     <canvas id="canvas"></canvas>
     <div id="menu">
+
         <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+              Vitasim
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Save</a></li>
+              <li><a class="dropdown-item" href="#">Import</a></li>
+              <li><a class="dropdown-item" href="#">Console</a></li>
+              <li><a class="dropdown-item" href="#">Extensions</a></li>
+              <li><a class="dropdown-item" href="#">About</a></li>
+            </ul>
+          </div>
+
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" >
               Life
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li><a class="dropdown-item" href="#">Life-form browser</a></li>
+              <li><a class="dropdown-item" href="#">Spawn from tray</a></li>
+              <li><a class="dropdown-item" href="#">Kill all</a></li>
             </ul>
           </div>
+
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" >
+              Stimulus
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Stimulus browser</a></li>
+              <li><a class="dropdown-item" href="#">Source editor</a></li>
+            </ul>
+          </div>
+
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" >
+              Experiment
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Instrument browser</a></li>
+              <li><a class="dropdown-item" href="#">Configure experiment</a></li>
+              <li><a class="dropdown-item" href="#">Environment parameters</a></li>
+              <li><a class="dropdown-item" href="#">Export experiment data</a></li>
+            </ul>
+          </div>
+
+    </div>
+
+
+    <div id="timeRegulator">
+      <div class="card bg-secondary">
+        <div class="card-body">
+          <h6 class="card-title">Time regulator</h6>
+          <div class="input-group flex-nowrap timedisplay bg-secondary">
+            <span class="input-group-text bg-dark" id="addon-wrapping">@</span>
+            <input type="text" disabled class="form-control bg-dark text-light" placeholder="0 ticks">
+          </div>
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-danger">Stop</button>
+            <button type="button" class="btn btn-warning">Slow</button>
+            <button type="button" class="btn btn-success">Fast</button>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
