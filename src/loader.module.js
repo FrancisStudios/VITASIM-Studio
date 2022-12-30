@@ -4,15 +4,16 @@
 * before user can enter the studio GUI
 */
 
-const remote = require('electron').remote;
+const { remote } = require('electron');
 const splashWindow = remote.getCurrentWindow();
-const BrowserWindow = remote.BrowserWindow;
-const { App } = require('../config/config.json');
+//const BrowserWindow = remote.BrowserWindow;
+const { BrowserWindow } = require('electron');
+//const { App } = require('../config/config.json');
 
 const LoadAssets = () => {
     const AssetLoader = new Promise(resolve => {
         //placeholder for loader
-        setTimeout(resolve, 5000);
+        (!App.developer.activated) ? setTimeout(resolve, 5000) : setTimeout(resolve, 0);
     }).then((_metadata) => {
         createGUIWindow()
         splashWindow.close();
