@@ -21,7 +21,6 @@ html body {
     left: 0px;
     padding: 0px;
     margin: 0px;
-    border: 1px solid red;
 }
 
 #menu {
@@ -55,4 +54,5 @@ html body {
 #timeRegulator .btn-group {
     display: flex;
     justify-content: space-around;
+    font-family: 'Segoe UI Symbol';
 }
