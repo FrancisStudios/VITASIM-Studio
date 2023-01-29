@@ -7,26 +7,39 @@
 */
 
 const summonAboutWindow = require('./interfaces/about');
+const summonQuickPaletteWindow = require('./interfaces/quic-palette');
 const moveWindowComponent = require('./dragger.module');
+
+/* ID POOL */
+const windowIdentifierPool = {
+    id: 0,
+    get last() { this.id++; return this.id}
+}
 
 $(document).ready(() => {
     /* MENU TRIGGERS */
     $('#about_menu_trigger').on('click', () => {
-        summonAboutWindow();
-        clearMessageWindowFromWorkbench();
-        dispatchMoveHandlerToMessageWindow();
+        const messageWindowId = windowIdentifierPool.last;
+        summonAboutWindow(messageWindowId);
+        clearMessageWindowFromWorkbench(messageWindowId);
+        dispatchMoveHandlerToMessageWindow(messageWindowId);
     });
+
+    $('#quickpalette_menu_trigger').on('click', ()=>{
+        //summonQuickPaletteWindow();
+    })
 });
 
-/* MESSAGE WINDOW CLOSE HANDLER */
-const clearMessageWindowFromWorkbench = () => {
+/* MESSAGE WINDOW CLOSE HANDLER DISPATCH */
+const clearMessageWindowFromWorkbench = (id) => {
     $('#close-window-action').on('click', () => {
-        console.log('click')
-        document.getElementById('workbenchArea').innerHTML = "";
+        //document.getElementById('workbenchArea').innerHTML = "";
+        var messageWindow = document.getElementById(`messageWindow${id}`);
+        messageWindow.parentNode.removeChild(messageWindow);
     });
 }
 
 /* MESSAGE WINDOW MOVE HANDLER DISPATCH */
-const dispatchMoveHandlerToMessageWindow = () => {
-    moveWindowComponent(document.getElementById('messageWindow'));
+const dispatchMoveHandlerToMessageWindow = (id) => {
+    moveWindowComponent(document.getElementById(`messageWindow${id}`));
 }

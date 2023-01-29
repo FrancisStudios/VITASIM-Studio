@@ -61,4 +61,12 @@ html body {
     width: 100%;
     height: 100%;
     position: absolute;
+    z-index: 998;
+}
+
+#widgetSpace{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 997;
 }
